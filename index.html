@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Khaled Gamal | Executive Portfolio</title>
+    
+    <!-- Premium Editorial & Geometric Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- General Reset & Styling --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        :root {
+            --title-font: 'Instrument Serif', serif;
+            --mint-cyan: #76dfd7;
+            --sky-blue: #4facfe;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .serif-quote {
+            font-family: var(--title-font);
+            font-weight: 400;
+        }
+
+        .bg-grid-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+        }
+
+        /* --- Dynamic Mesh Background Hero Section --- */
+        .hero-viewport {
+            width: 100%;
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 30px 40px;
+            background: linear-gradient(135deg, #2b92de 0%, #4facfe 35%, #76dfd7 75%, #a1f0ce 100%);
+            background-size: 200% 200%;
+            animation: meshMovement 12s ease infinite;
+        }
+
+        @keyframes meshMovement {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* --- Glassmorphic Floating Top Navigation --- */
+        .nav-container {
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 50px;
+            padding: 12px 30px;
+            z-index: 100;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.03);
+        }
+
+        .logo-brand {
+            color: #ffffff;
+            font-family: var(--title-font);
+            font-size: 28px;
+            text-decoration: none;
+        }
+
+        .search-bar-placeholder {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            padding: 6px 18px;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: opacity 0.2s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.7;
+        }
+
+        .profile-capsule {
+            background: rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 8px 18px;
+            border-radius: 30px;
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .profile-dot {
+            width: 8px;
+            height: 8px;
+            background: #4ef2a6;
+            border-radius: 50%;
+        }
+
+        /* --- Centered Hero Content Block --- */
+        .hero-center-content {
+            max-width: 900px;
+            margin: auto auto;
+            text-align: center;
+            z-index: 10;
+        }
+
+        .hero-center-content h1 {
+            color: #ffffff;
+            font-size: 72px;
+            line-height: 1.05;
+            margin-bottom: 24px;
+        }
+
+        .hero-center-content p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 18px;
+            line-height: 1.6;
+            padding: 0 60px;
+        }
+
+        /* --- Base Horizontal Card Carousel Row --- */
+        .ticker-row-container {
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            overflow-x: auto;
+        }
+
+        .ticker-row-container::-webkit-scrollbar { display: none; }
+
+        .ticker-grid {
+            display: flex;
+            gap: 20px;
+            padding: 10px 0;
+        }
+
+        .ticker-card {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            padding: 20px 26px;
+            min-width: 230px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.03);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .ticker-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        .ticker-val {
+            font-size: 18px;
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        /* --- Main Layout Section Architecture --- */
+        .content-section {
+            max-width: 1200px;
+            margin: 140px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 52px;
+            color: var(--text-dark);
+            margin-bottom: 50px;
+        }
+
+        /* --- About Section Grid --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .philosophy-callout {
+            font-size: 38px;
+            line-height: 1.2;
+            color: #2b92de;
+            border-left: 2px solid var(--mint-cyan);
+            padding-left: 30px;
+        }
+
+        .bio-text {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--text-muted);
+        }
+
+        /* --- Core Pillars 3-Card Grid --- */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .pillar-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 45px 35px;
+            border: 1px solid #edf2f7;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.01);
+            transition: transform 0.3s;
+        }
+
+        .pillar-card:hover { transform: translateY(-5px); }
+
+        .pillar-card h3 {
+            font-size: 26px;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .pillar-card p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+
+        /* --- Interactive Presentation Component Layout --- */
+        .download-component {
+            background: #ffffff;
+            border-radius: 24px;
+            border: 1px solid #e2e8f0;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 40px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.02);
+        }
+
+        .tab-menu-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .tab-buttons-container {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 16px 20px;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active {
+            background: #ffffff;
+            border-color: #cbd5e1;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        .tab-indicator {
+            font-size: 10px;
+            color: var(--text-muted);
+            background: #f1f5f9;
+            padding: 3px 8px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+
+        .tab-btn-title {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .tab-pane-content h3 {
+            font-size: 42px;
+            margin-bottom: 16px;
+        }
+
+        .tab-pane-content p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+
+        .tab-image-right {
+            border-radius: 20px;
+            background: linear-gradient(135deg, #e0f2fe 0%, #ccfbf1 100%);
+            position: relative;
+            min-height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .mockup-inner-window {
+            width: 80%;
+            height: 70%;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.6);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            padding: 20px;
+        }
+
+        /* --- Smooth Auto-Scrolling Carousel Styles --- */
+        .carousel-wrapper {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 24px;
+            padding: 24px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.01);
+        }
+
+        .carousel-wrapper::before,
+        .carousel-wrapper::after {
+            content: "";
+            height: 100%;
+            position: absolute;
+            width: 15%;
+            z-index: 2;
+            pointer-events: none;
+            top: 0;
+        }
+        .carousel-wrapper::before {
+            left: 0;
+            background: linear-gradient(to right, #f8fafc 0%, transparent 100%);
+        }
+        .carousel-wrapper::after {
+            right: 0;
+            background: linear-gradient(to left, #f8fafc 0%, transparent 100%);
+        }
+
+        .carousel-track {
+            display: flex;
+            width: max-content;
+            animation: scrollMarquee 25s linear infinite;
+        }
+
+        .carousel-wrapper:hover .carousel-track {
+            animation-play-state: paused;
+        }
+
+        .carousel-slide {
+            padding: 0 12px;
+        }
+
+        .carousel-slide img {
+            width: 280px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 16px;
+            border: 1px solid #edf2f7;
+            filter: grayscale(15%);
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .carousel-slide img:hover {
+            transform: scale(1.02);
+            filter: grayscale(0%);
+        }
+
+        @keyframes scrollMarquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* --- Life Coaching Section Styles --- */
+        .coaching-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .coaching-badge {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--sky-blue);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .coaching-headline {
+            font-size: 44px;
+            line-height: 1.15;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+
+        .coaching-subtext {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--text-muted);
+            margin-bottom: 35px;
+        }
+
+        .impact-mini-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.01);
+        }
+
+        .impact-num {
+            font-family: var(--title-font);
+            font-size: 48px;
+            color: #2b92de;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .impact-label {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .practice-row {
+            display: flex;
+            gap: 30px;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .practice-row:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .practice-num {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--mint-cyan);
+            font-family: monospace;
+            padding-top: 4px;
+        }
+
+        .practice-body h4 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .practice-body p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-muted);
+        }
+
+        /* --- High-Density Minimalist Publications & Training Layout --- */
+        .pub-container {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .pub-featured-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.01);
+        }
+
+        .pub-badge {
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--sky-blue);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .pub-journal-title {
+            font-size: 32px;
+            line-height: 1.15;
+            margin-bottom: 4px;
+            color: var(--text-dark);
+        }
+
+        .pub-issue {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 500;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .pub-abstract {
+            font-size: 13.5px;
+            line-height: 1.6;
+            color: var(--text-muted);
+        }
+
+        .training-header-title {
+            font-size: 22px;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+            font-family: var(--title-font);
+        }
+
+        .training-item {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 18px;
+            margin-bottom: 16px;
+        }
+
+        .training-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .institutional-item {
+            background: #f8fafc;
+            border-style: dashed;
+            margin-bottom: 12px;
+        }
+
+        .training-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .training-field {
+            font-size: 9px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .field-delivered {
+            background: #e0f2fe;
+            color: #0369a1;
+        }
+
+        .field-certified {
+            background: #ccfbf1;
+            color: #0f766e;
+        }
+
+        .training-date {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .training-item h4 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .training-item p {
+            font-size: 12.5px;
+            line-height: 1.5;
+            color: var(--text-muted);
+        }
+
+        /* --- Minimal Compact Training Bullets --- */
+        .training-bullets-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 10px 0;
+        }
+
+        .training-bullets-list li {
+            font-size: 11.5px;
+            line-height: 1.5;
+            color: var(--text-muted);
+            position: relative;
+            padding-left: 16px;
+            margin-bottom: 6px;
+        }
+
+        .training-bullets-list li::before {
+            content: "🔸";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 10px;
+        }
+
+        /* --- Compact Image Snapshot Component --- */
+        .training-image-slot {
+            width: 100%;
+            margin-top: 12px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+
+        .training-image-slot img {
+            width: 100%;
+            height: 110px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* --- Professional Experience Corporate Timeline --- */
+        .timeline-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 7px; top: 0; bottom: 0;
+            width: 2px;
+            background: #e2e8f0;
+        }
+
+        .timeline-event {
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        .timeline-event::before {
+            content: '';
+            position: absolute;
+            left: -39px; top: 6px;
+            width: 16px; height: 16px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 3px solid var(--sky-blue);
+        }
+
+        .time-stamp {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--sky-blue);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .event-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .event-desc {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-muted);
+        }
+
+        /* --- Premium Social Connect Footer --- */
+        .linkedin-footer-section {
+            background: #ffffff;
+            border-top: 1px solid #e2e8f0;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .linkedin-box h2 {
+            font-size: 46px;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .linkedin-box p {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .connect-buttons-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            max-width: 800px;
+            margin: 0 auto 32px auto;
+        }
+
+        .btn-connect {
+            color: #ffffff;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-connect:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-linkedin {
+            background: #0a66c2;
+            box-shadow: 0 8px 20px rgba(10, 102, 194, 0.15);
+        }
+        .btn-linkedin:hover {
+            box-shadow: 0 12px 24px rgba(10, 102, 194, 0.25);
+        }
+
+        .btn-facebook {
+            background: #1877f2;
+            box-shadow: 0 8px 20px rgba(24, 119, 242, 0.15);
+        }
+        .btn-facebook:hover {
+            box-shadow: 0 12px 24px rgba(24, 119, 242, 0.25);
+        }
+
+        .btn-coaching {
+            background: var(--text-dark);
+            box-shadow: 0 8px 20px rgba(30, 41, 59, 0.1);
+        }
+        .btn-coaching:hover {
+            box-shadow: 0 12px 24px rgba(30, 41, 59, 0.2);
+        }
+
+        .footer-copyright {
+            margin-top: 60px;
+            font-size: 12px;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+        }
+
+        /* --- Media Queries --- */
+        @media (max-width: 992px) {
+            .nav-links, .search-bar-placeholder { display: none; }
+            .about-grid, .pillars-grid, .download-component, .coaching-container, .pub-container { grid-template-columns: 1fr; }
+            .hero-center-content h1 { font-size: 46px; }
+            .hero-viewport { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- --- Main Hero Viewport --- -->
+    <div class="hero-viewport">
+        <div class="bg-grid-overlay"></div>
+        
+        <header class="nav-container">
+            <div class="nav-left">
+                <a href="#" class="logo-brand">Dr. Khaled Gamal</a>
+                <div class="search-bar-placeholder">
+                    <span>🔍</span> Search insights...
+                </div>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#pillars">Pillars</a></li>
+                <li><a href="#philosophy">Philosophy</a></li>
+                <li><a href="#coaching">Coaching</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#experience">Experience</a></li>
+            </ul>
+            
+            <div class="nav-right">
+                <div class="profile-capsule">
+                    <span class="profile-dot"></span> Executive
+                </div>
+            </div>
+        </header>
+
+        <div class="hero-center-content">
+            <h1>Bridging Commercial Excellence, Compliance, and Human Growth.</h1>
+            <p>Pharmaceutical Executive, Chief Compliance Officer, and Executive Coach empowering organizations to achieve sustainable growth while mentoring the next generation of leaders.</p>
+        </div>
+
+        <div class="ticker-row-container">
+            <div class="ticker-grid">
+                <div class="ticker-card">
+                    <span class="ticker-label">Tenure</span>
+                    <div class="ticker-val">20+ Years</div>
+                </div>
+                <div class="ticker-card">
+                    <span class="ticker-label">Current Role</span>
+                    <div class="ticker-val">Commercial Director</div>
+                </div>
+                <div class="ticker-card">
+                    <span class="ticker-label">Governance</span>
+                    <div class="ticker-val">Chief Compliance Officer</div>
+                </div>
+                <div class="ticker-card">
+                    <span class="ticker-label">Mentorship Reach</span>
+                    <div class="ticker-val">31k+ Professional Network</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- --- About Section --- -->
+    <section id="about" class="content-section">
+        <h2 class="section-title">The Visionary Profile</h2>
+        <div class="about-grid">
+            <div class="philosophy-callout">
+                "Leadership hinges on systemic responsibility and the courage to make bold choices."
+            </div>
+            <div class="bio-text">
+                Dr. Khaled Gamal is a visionary pharmaceutical executive celebrated for an unwavering commitment to commercial excellence, building high-performing teams, and driving digital transformation across the healthcare landscape. With a rich, diversified career spanning over two decades, he simultaneously serves as the Commercial Excellence Director and Chief Compliance Officer at Mash Premiere . Dr. Khaled integrates advanced analytics, systemic responsibility, and courageous decision-making to set new industry benchmarks.
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Core Pillars Section --- -->
+    <section id="pillars" class="content-section">
+        <h2 class="section-title">Foundational Pillars</h2>
+        <div class="pillars-grid">
+            <div class="pillar-card">
+                <h3>Commercial Excellence</h3>
+                <p>Integrating advanced analytics, digital transformation, and market best practices to unlock sustainable pharmaceutical growth and navigate industry complexity.</p>
+            </div>
+            <div class="pillar-card">
+                <h3>Corporate Governance</h3>
+                <p>Protecting organizational integrity and systemic responsibility by establishing robust structural frameworks as Chief Compliance Officer.</p>
+            </div>
+            <div class="pillar-card">
+                <h3>Executive Coaching</h3>
+                <p>Operating as an executive board advisor and life mentor dedicated to unlocking critical thinking, building resilience, and guiding the next generation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Interactive Philosophy Tab Component --- -->
+    <section id="philosophy" class="content-section">
+        <h2 class="section-title">Insights & Leadership Philosophy</h2>
+        
+        <div class="download-component">
+            <div class="tab-menu-left">
+                <div class="tab-buttons-container">
+                    <div class="tab-btn active">
+                        <span class="tab-indicator">Shift + 1</span>
+                        <div class="tab-btn-title">Resilience</div>
+                    </div>
+                    <div class="tab-btn">
+                        <span class="tab-indicator">Shift + 2</span>
+                        <div class="tab-btn-title">Critical Mind</div>
+                    </div>
+                    <div class="tab-btn">
+                        <span class="tab-indicator">Shift + 3</span>
+                        <div class="tab-btn-title">Reflection</div>
+                    </div>
+                </div>
+
+                <div class="tab-pane-content">
+                    <h3>The Comeback is Greater than the Setback</h3>
+                    <p>True leadership begins when we face the mirror honestly, recognize the gaps between where we are and where we want to be, and seize the time to plant good seeds for others.</p>
+                </div>
+            </div>
+
+            <div class="tab-image-right">
+                <div class="mockup-inner-window">
+                    <p style="font-size: 11px; color: var(--text-muted); margin-bottom: 10px;">Executive Mindset Mapping // </p>
+                    <div style="width: 100%; height: 4px; background: var(--sky-blue); border-radius: 2px; margin-bottom: 15px;"></div>
+                    <h4 style="font-size: 28px; line-height: 1.2;">"Why Critical Thinking Is the Leadership Skill We Can't Afford to Lose."</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Compact Photo Carousel Section --- -->
+    <section class="content-section" style="margin: 80px auto;">
+        <div class="carousel-wrapper">
+            <div class="carousel-track">
+                <div class="carousel-slide"><img src="/imgs/1000130467.jpg" alt="Executive Workspace"></div>
+                <div class="carousel-slide"><img src="/imgs/1000130497.jpg" alt="Strategy Analytics"></div>
+                <div class="carousel-slide"><img src="/imgs/Screenshot 2026-06-20 211207.png" alt="Collaboration Mentorship"></div>
+                <div class="carousel-slide"><img src="/imgs/Screenshot 2026-06-20 211227.png" alt="Executive Workspace"></div>
+                <div class="carousel-slide"><img src="/imgs/Screenshot 2026-06-20 211256.png" alt="Strategy Analytics"></div>
+                <div class="carousel-slide"><img src="/imgs/Screenshot 2026-06-20 211656.png" alt="Collaboration Mentorship"></div>
+                <div class="carousel-slide"><img src="/imgs/1000130497.jpg" alt="Digital Transformation"></div>
+            
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Life Coaching & Mentorship Section --- -->
+    <section id="coaching" class="content-section">
+        <h2 class="section-title">Human Growth & Mentorship</h2>
+        
+        <div class="coaching-container">
+            <div class="coaching-left">
+                <div class="coaching-badge">EXECUTIVE COACH & MENTOR</div>
+                <h3 class="coaching-headline">Cultivating resilience and critical thinking across generations.</h3>
+                <p class="coaching-subtext">
+                    True leadership extends beyond corporate balance sheets. It lies in the human capacity to face setbacks honestly, navigate complex professional cross-roads, and plant the seeds of growth for future leaders.
+                </p>
+                
+                <div class="impact-mini-card">
+                    <div class="impact-num">31k+</div>
+                    <div class="impact-label">Professionals mentored and engaged via integrated network insights.</div>
+                </div>
+            </div>
+
+            <div class="coaching-right">
+                <div class="practice-row">
+                    <div class="practice-num">01</div>
+                    <div class="practice-body">
+                        <h4>Critical Mindset Mapping</h4>
+                        <p>Guiding professionals to move past conventional biases, question operational norms, and execute high-stakes decisions with clarity and cognitive depth.</p>
+                    </div>
+                </div>
+                
+                <div class="practice-row">
+                    <div class="practice-num">02</div>
+                    <div class="practice-body">
+                        <h4>Resilience Architecture</h4>
+                        <p>Constructing tactical frameworks that transform market and career setbacks into defining strategic comebacks, building long-term emotional and professional stamina.</p>
+                    </div>
+                </div>
+
+                <div class="practice-row">
+                    <div class="practice-num">03</div>
+                    <div class="practice-body">
+                        <h4>Systemic Responsibility</h4>
+                        <p>Aligning individual career trajectories with larger organizational ethics and social value, teaching mentees how to lead with absolute integrity.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- High-Density Grid: Publications & Trainings Section --- -->
+    <section id="publications" class="content-section">
+        <h2 class="section-title">Academic & Corporate Footprint</h2>
+        
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+            
+            <!-- Row 1: Two Columns (Publication + Training 1) -->
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+                <!-- Left: Brief Publication Card with Link -->
+                <div class="pub-featured-card" style="margin: 0; height: 100%; display: flex; flex-direction: column; justify-content: center;">
+                    <span class="pub-badge">Peer-Reviewed Paper</span>
+                    <h3 class="pub-journal-title">The Voice of Professional</h3>
+                    <span class="pub-issue">Issue No. 2 // Shared Insight</span>
+                    <p class="pub-abstract" style="margin-bottom: 12px;">
+                        Co-authored specialized executive research alongside regional pharma leaders, outlining modern methodologies in commercial excellence and governance frameworks.
+                    </p>
+                    <a href="https://www.linkedin.com/posts/drkhaledgamal_the-voice-of-professional-journal-ugcPost-7378449258024185857-ae0L/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFbMc9MBCkqaKg0H4huEBN7AgL4gqyQuJ1o" target="_blank" style="font-size: 12px; color: var(--sky-blue); text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 4px;">
+                        Read Full Publication <span style="font-size: 10px;">➔</span>
+                    </a>
+                </div>
+
+                <!-- Right: Training Item 1 -->
+                <div class="training-item" style="margin: 0;">
+                    <div class="training-meta">
+                        <span class="training-field field-delivered">Leadership & Agility</span>
+                        <span class="training-date">District Managers</span>
+                    </div>
+                    <h4>National Strategy Local Execution</h4>
+                    <p>Alignment masterclass empowering teams to map macro goals to local action paths under the slogan: <em>“From first, to first, be first”</em> (عادي ولا ريادي).</p>
+                    <div class="training-image-slot">
+                        <img src="/imgs/Screenshot 2026-06-20 212229.png" alt="Strategy Alignment">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: Shared Dynamic Row (Training 2 - Optimized Spacing) -->
+            <div style="display: grid; grid-template-columns: 1fr; gap: 20px;">
+                <!-- Full Width Block for Training 2 to clean up the footprint -->
+                <div class="training-item" style="margin: 0;">
+                    <div class="training-meta">
+                        <span class="training-field field-delivered">Commercial Intelligence</span>
+                        <span class="training-date">Masterclass</span>
+                    </div>
+                    <h4>Data-Driven Pharma Marketing</h4>
+                    <p>Brief technical brief explaining pipeline optimization protocols across medical markets.</p>
+                    <ul class="training-bullets-list" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 12px;">
+                        <li><strong>Data Matrices:</strong> HCP databases & clinical trial data tracking.</li>
+                        <li><strong>Insight to Action:</strong> Implementing advanced predictive models.</li>
+                        <li><strong>Tool Mastery:</strong> Analytics workflows for Salesforce & Power BI.</li>
+                    </ul>
+                    <div class="training-image-slot">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Pharma Analytics">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- --- Executive Career Timeline --- -->
+    <section id="experience" class="content-section">
+        <h2 class="section-title">Professional Milestones</h2>
+        <div class="timeline-container">
+            <div class="timeline-event">
+                <span class="time-stamp">Sep 2017 - Present</span>
+                <div class="event-title">Commercial Excellence Director | Mash Premiere</div>
+                <div class="event-desc">Directing overall commercial strategy, data-driven pharmaceutical marketing, and business development across regional territories.</div>
+            </div>
+            <div class="timeline-event">
+                <span class="time-stamp">Jan 2023 - Present</span>
+                <div class="event-title">Chief Compliance Officer | Mash Premiere</div>
+                <div class="event-desc">Overseeing risk management operations, organizational corporate integrity, and governance regulatory frameworks.</div>
+            </div>
+            <div class="timeline-event">
+                <span class="time-stamp">Jan 2018 - Oct 2023</span>
+                <div class="event-title">Commercial Excellence Head | Mash Premiere & Biomed</div>
+                <div class="event-desc">Coordinated multi-organizational scale-ups and established modern analytical commercial metrics.</div>
+            </div>
+            <div class="timeline-event">
+                <span class="time-stamp">Jan 2015 - Dec 2017</span>
+                <div class="event-title">Commercial Manager & Country Head | Mash Premiere</div>
+                <div class="event-desc">Managed strategic performance pathways and drove country-wide product distribution alignment.</div>
+            </div>
+            <div class="timeline-event">
+                <span class="time-stamp">May 2009 - Dec 2009</span>
+                <div class="event-title">Sales & Operation Director | ZAD Group</div>
+                <div class="event-desc">Launched the leading bold change transformation program across primary business divisions in Egypt.</div>
+            </div>
+            <div class="timeline-event">
+                <span class="time-stamp">Sep 2007 - May 2008</span>
+                <div class="event-title">Export Director | Mash Premiere</div>
+                <div class="event-desc">Successfully penetrated new key foreign markets across the Middle East and Africa including Saudi Arabia, UAE, Yemen, and Lebanon.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Contact & Network Footer Section --- -->
+    <footer id="contact" class="linkedin-footer-section">
+        <div class="linkedin-box">
+            <h2>Contact & Connect</h2>
+            <p>For executive governance advisory, commercial strategy consultations, or life coaching mentorship, connect across Dr. Khaled Gamal's professional networks.</p>
+            
+            <div class="connect-buttons-grid">
+                <a href="https://www.linkedin.com/in/drkhaledgamal/" target="_blank" class="btn-connect btn-linkedin">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"/></svg>
+                    LinkedIn Profile
+                </a>
+                <a href="https://www.facebook.com/" target="_blank" class="btn-connect btn-facebook">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/></svg>
+                    Facebook Page
+                </a>
+                <a href="mailto:coaching@example.com?subject=Life%20Coaching%20Inquiry" class="btn-connect btn-coaching">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    Life Coaching Inquiry
+                </a>
+            </div>
+
+            <div class="footer-copyright">
+                &copy; 2026 Dr. Khaled Gamal. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

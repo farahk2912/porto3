@@ -1,0 +1,141 @@
+.nav-container {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+    gap: 15px;
+    padding: 15px 5%;
+}
+.nav-left {
+    display: flex; 
+    align-items: center; 
+    gap: 16px;
+}
+.nav-links {
+    display: flex; 
+    gap: 20px; 
+    list-style: none; 
+    margin: 0; 
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.ticker-grid, .pillars-grid, .certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.about-grid, .download-component, .coaching-container, .pub-row-top {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+@media (max-width: 768px) {
+    .about-grid, .download-component, .coaching-container, .pub-row-top {
+        grid-template-columns: 1fr;
+    }
+    .training-bullets-list {
+        grid-template-columns: 1fr !important;
+    }
+    .hero-center-content h1 {
+        font-size: 2rem;
+    }
+}
+
+.training-bullets-list {
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px; 
+    margin-top: 12px;
+    list-style: none;
+    padding: 0;
+}
+.publications-wrapper {
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px;
+}
+.pub-row-bottom {
+    display: grid; 
+    grid-template-columns: 1fr; 
+    gap: 20px;
+}
+.framework-flex-column {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between;
+}
+.cert-title {
+    font-size: 16px; 
+    min-height: 44px; 
+    margin-bottom: 12px;
+}
+.cert-img-container {
+    width: 100%; 
+    height: 140px; 
+    background: #f8fafc; 
+    border: 1px solid #e2e8f0; 
+    border-radius: 8px; 
+    overflow: hidden; 
+    margin-bottom: 12px;
+}
+.cert-img-container img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    display: block;
+}
+.cert-desc {
+    font-size: 12px; 
+    margin-bottom: 12px;
+}
+.cert-tags-row {
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 6px; 
+    margin-bottom: 14px;
+}
+.cert-tag {
+    font-size: 10px; 
+    background: #f1f5f9; 
+    padding: 3px 8px; 
+    border-radius: 4px; 
+    color: var(--text-dark); 
+    font-weight: 500;
+}
+.cert-id {
+    font-size: 10px; 
+    color: var(--text-muted); 
+    font-family: monospace; 
+    display: block;
+}
+.mapping-label {
+    font-size: 11px; 
+    color: var(--text-muted); 
+    margin-bottom: 10px;
+}
+.accent-bar {
+    width: 100%; 
+    height: 4px; 
+    background: var(--sky-blue); 
+    border-radius: 2px; 
+    margin-bottom: 15px;
+}
+.mapping-headline {
+    font-size: 28px; 
+    line-height: 1.2;
+}
+.carousel-section {
+    margin: 80px auto;
+}
+.publication-link {
+    font-size: 12px; 
+    color: var(--sky-blue); 
+    text-decoration: none; 
+    font-weight: 500; 
+    display: inline-flex; 
+    align-items: center; 
+    gap: 4px;
+}
